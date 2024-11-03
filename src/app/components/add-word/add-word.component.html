@@ -1,0 +1,13 @@
+<div class="add-word-form">
+  <input
+    [(ngModel)]="newWord"
+    placeholder="Слово англійською"
+    class="add-word-form__input add-word-form__input--spaced"
+  />
+  <input
+    [(ngModel)]="newTranslation"
+    placeholder="Переклад українською"
+    class="add-word-form__input"
+  />
+  <button (click)="addWord()" class="add-word-form__button">Додати</button>
+</div>

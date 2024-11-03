@@ -1,0 +1,48 @@
+<div class="add-new-word__container">
+  <h2 class="add-new-word__title">Додати нове слово</h2>
+
+  <!-- Include AddWordComponent -->
+  <app-add-word (wordAdded)="addWord($event)"></app-add-word>
+
+  <button (click)="toggleWords()" class="add-new-word__button">
+    {{ showWords ? 'Закрити словник' : 'Відкрити словник' }}
+  </button>
+
+  <ng-container *ngIf="showWords">
+    <hr class="line" />
+    <h2 class="add-new-word__words-container__title">Словник</h2>
+
+    <div *ngIf="!words.length" class="add-new-word__words-container__empty">
+      Слова не додані
+    </div>
+
+    <ul *ngIf="words.length" class="add-new-word__words-container__list">
+      <li
+        *ngFor="let word of words; let i = index"
+        class="add-new-word__words-container__item"
+      >
+        <span class="add-new-word__words-container__item__text">
+          <strong>{{ i + 1 }}. {{ word.split(',')[0] }}</strong> -
+          {{ word.split(',')[1] }}
+        </span>
+        <button
+          (click)="deleteWord(i)"
+          class="add-new-word__words-container__item__delete-button"
+          aria-label="Видалити слово"
+        >
+          &#10006;
+        </button>
+      </li>
+    </ul>
+    <hr class="line" />
+  </ng-container>
+
+  <a
+    routerLink="/word-test"
+    class="add-new-word__test-link"
+    [attr.disabled]="!words.length ? true : null"
+    [ngClass]="{ 'add-new-word__test-link--disabled': !words.length }"
+  >
+    Перейти до тесту
+  </a>
+</div>

@@ -1,0 +1,130 @@
+.add-new-word {
+  &__container {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    width: 30rem;
+    max-width: 90%;
+    margin: auto;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #374151;
+  }
+
+  &__button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #4338ca;
+    }
+  }
+
+  &__words-container {
+    margin-top: 1.5rem;
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #374151;
+    }
+
+    &__empty {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    &__list {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      height: 12rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.25rem;
+      background-color: #f9fafb;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background-color: #ffffff;
+      border-radius: 0.25rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #f1f5f9;
+      }
+
+      &__text {
+        flex-grow: 1;
+        color: #1f2937;
+        font-weight: 600;
+      }
+
+      &__delete-button {
+        background: none;
+        border: none;
+        color: #ef4444;
+        font-size: 20px;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #dc2626;
+        }
+      }
+    }
+  }
+
+  &__test-link {
+    color: #3b82f6;
+    text-decoration: underline;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+    transition: color 0.2s;
+
+    &[disabled] {
+      pointer-events: none;
+      color: #6b7280;
+    }
+
+    &--disabled {
+      pointer-events: none;
+      color: #6b7280;
+    }
+
+    &:hover:not(:disabled) {
+      color: #2563eb;
+    }
+  }
+}
+
+.line {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}

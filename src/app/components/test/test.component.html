@@ -1,0 +1,24 @@
+<div class="word-test">
+  <h2 class="word-test__title">Тест на знання слів</h2>
+  <p class="word-test__instruction">
+    Перекладіть на англійську:
+    <span class="word-test__instruction__word">{{ currentWord }}</span>
+  </p>
+
+  <input
+    [(ngModel)]="userAnswer"
+    placeholder="Ваша відповідь"
+    class="word-test__input"
+  />
+
+  <button (click)="checkAnswer()" class="word-test__button">Перевірити</button>
+
+  <p class="word-test__score">
+    Ваш поточний рахунок:
+    <span class="word-test__score__value"
+      ><b>{{ score }}</b></span
+    >
+  </p>
+
+  <a routerLink="/" class="word-test__link">Назад</a>
+</div>
